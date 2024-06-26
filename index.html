@@ -13,130 +13,130 @@
 
   <h1 class="text-center p-5 font-monospace display-1">qxyz.me</h1>
 
-  <div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="row row-cols-1 row-cols-md-3 g-4" id="contents">
 
-    <div class="col">
-      <div class="card h-100">
-        <a href="spells" class="stretched-link">
+    <template id="project">
+      <div class="col">
+        <div class="card h-100">
+          <a class="stretched-link z-1" href=""></a>
           <div class="ratio ratio-16x9">
-            <img src="thumbnails/spells.jpg" class="card-img-top" alt="...">
+            <img src="" class="card-img-top" alt="...">
           </div>
-        </a>
-        <div class="card-body">
-          <h5 class="card-title">Spellbook</h5>
-          <p class="card-text">Search for D&amp;D spells.</p>
+          <div class="card-body">
+            <h5 class="card-title d-inline-block"></h5>
+            <a class="github position-relative z-2" target="_blank" href="">
+              <img class="float-end" width="24" src="assets/github-mark.svg">
+            </a>
+            <p class="card-text"></p>
+          </div>
         </div>
       </div>
-    </div>
-
-    <div class="col">
-      <div class="card h-100">
-        <a href="pwnged" class="stretched-link">
-          <div class="ratio ratio-16x9">
-            <img src="thumbnails/pwnged.png" class="card-img-top" alt="...">
-          </div>
-        </a>
-        <div class="card-body">
-          <h5 class="card-title">PwNGed</h5>
-          <p class="card-text">Hide secret messages in PNG files.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col">
-      <div class="card h-100">
-        <a href="chip8" class="stretched-link">
-          <div class="ratio ratio-16x9">
-            <img src="thumbnails/chip8.png" class="card-img-top" alt="...">
-          </div>
-        </a>
-        <div class="card-body">
-          <h5 class="card-title">CHIP-8</h5>
-          <p class="card-text">
-            A CHIP-8 emulator built with SDL2 and ported to the web with Emscripten.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col">
-      <div class="card h-100">
-        <a href="place" class="stretched-link">
-          <div class="ratio ratio-16x9">
-            <img src="thumbnails/place.svg" class="card-img-top" alt="...">
-          </div>
-        </a>
-        <div class="card-body">
-          <h5 class="card-title">r/place</h5>
-          <p class="card-text">A toy version of the collaborative canvas at Reddit.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col">
-      <div class="card h-100">
-        <a href="roll" class="stretched-link">
-          <div class="ratio ratio-16x9">
-            <img src="thumbnails/dice.jpeg" class="card-img-top" alt="...">
-          </div>
-        </a>
-        <div class="card-body">
-          <h5 class="card-title">Dice Roller</h5>
-          <p class="card-text">Digital dice for my D&amp;D sessions.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col">
-      <div class="card h-100">
-        <a href="mnist" class="stretched-link">
-          <div class="ratio ratio-16x9">
-            <img src="thumbnails/mnist.png" class="card-img-top" alt="...">
-          </div>
-        </a>
-        <div class="card-body">
-          <h5 class="card-title">Digit Recognizer</h5>
-          <p class="card-text">Handwritten digit classification in the browser.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col">
-      <div class="card h-100">
-        <a href="https://cs571-hw3-qxy67.wl.r.appspot.com" class="stretched-link" target="_blank">
-          <div class="ratio ratio-16x9">
-            <img src="thumbnails/stock.png" class="card-img-top" alt="...">
-          </div>
-        </a>
-        <div class="card-body">
-          <h5 class="card-title">Stock Search</h5>
-          <p class="card-text">
-            Course project: Search for ticker symbols,
-            add them to your watchlist, and trade virtually.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col">
-      <div class="card h-100">
-        <a href="#" class="stretched-link">
-          <div class="ratio ratio-16x9">
-            <img src="https://placehold.co/160x90?text=TODO" class="card-img-top" alt="...">
-          </div>
-        </a>
-        <div class="card-body">
-          <h5 class="card-title">TODO</h5>
-          <p class="card-text">Under construction. Come back later!</p>
-        </div>
-      </div>
-    </div>
+    </template>
 
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
+
+  <script>
+
+    const PROJECTS = [
+
+      {
+        title: 'Spellbook',
+        description: 'Search for D&D spells.',
+        thumbnail: 'assets/spells.jpg',
+        link: 'spells',
+        github: 'https://github.com/qianxyz/spellbook',
+      },
+
+      {
+        title: 'PwNGed',
+        description: 'Hide secret messages in PNG files.',
+        thumbnail: 'assets/pwnged.png',
+        link: 'pwnged',
+        github: 'https://github.com/qianxyz/pngme',
+      },
+
+      {
+        title: 'CHIP-8',
+        description: 'A CHIP-8 emulator in the browser.',
+        thumbnail: 'assets/chip8.png',
+        link: 'chip8',
+        github: 'https://github.com/qianxyz/chip-8',
+      },
+
+      {
+        title: 'r/place',
+        description: 'A toy version of r/place on Reddit.',
+        thumbnail: 'assets/place.svg',
+        objectFit: 'contain',
+        link: 'place',
+        github: 'https://github.com/qianxyz/rplace',
+      },
+
+      {
+        title: 'Dice Roller',
+        description: 'Digital dice for my D&D sessions.',
+        thumbnail: 'assets/dice.jpeg',
+        link: 'roll',
+        github: 'https://github.com/qianxyz/dice-roller',
+      },
+
+      {
+        title: 'Digit Recognizer',
+        description: 'Handwritten digit classification in the browser.',
+        thumbnail: 'assets/mnist.png',
+        link: 'mnist',
+        github: 'https://github.com/qianxyz/mnist-webui',
+      },
+
+      {
+        title: 'Stock Search',
+        description: 'Course project for a stock dashboard.',
+        thumbnail: 'assets/stock.png',
+        target: '_blank',
+        link: 'https://cs571-hw3-qxy67.wl.r.appspot.com',
+      },
+
+      {
+        title: 'TODO',
+        description: 'Under construction. Come back later!',
+        thumbnail: 'https://placehold.co/160x90?text=TODO',
+        link: '#',
+      },
+
+    ];
+
+    const contents = document.getElementById('contents');
+    const template = document.getElementById('project');
+
+    PROJECTS.forEach(project => {
+      const clone = template.content.cloneNode(true);
+
+      const img = clone.querySelector('.card-img-top');
+      const title = clone.querySelector('.card-title');
+      const text = clone.querySelector('.card-text');
+      const link = clone.querySelector('.stretched-link');
+      const github = clone.querySelector('.github');
+
+      img.src = project.thumbnail;
+      img.style.objectFit = project.objectFit || 'cover';
+      title.textContent = project.title;
+      text.textContent = project.description;
+      link.href = project.link;
+      link.target = project.target || '_self';
+      if (project.github) {
+        github.href = project.github;
+      } else {
+        github.remove();
+      }
+
+      contents.appendChild(clone);
+    });
+
+  </script>
 
 </body>
 
