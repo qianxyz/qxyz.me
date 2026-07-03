@@ -42,6 +42,8 @@ served in production.
 
 One-time setup on a fresh host: install docker,
 `docker network create web`, clone the repos under `/srv`, create a
-Cloudflare tunnel and put its token in `deploy/.env`
-(`TUNNEL_TOKEN=...`, git-ignored), then
+Cloudflare tunnel (`cloudflared tunnel create` + `tunnel route dns` for
+the apex and wildcard) and place its credentials JSON at
+`deploy/cloudflared/credentials.json` (git-ignored; the tunnel id in
+`deploy/cloudflared/config.yml` must match), then
 `docker compose -f deploy/compose.yaml up -d` and `deploy.sh` each app.

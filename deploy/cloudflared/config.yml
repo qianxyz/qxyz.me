@@ -1,0 +1,4 @@
+tunnel: ed53f80b-8b9f-4621-95b0-769ae6a7914e
+credentials-file: /etc/cloudflared/credentials.json
+ingress:
+  - service: http://caddy:80
