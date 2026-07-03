@@ -11,6 +11,7 @@ served in production.
     deploy/
     ├── compose.yaml         # hub stack: cloudflared (tunnel) + caddy
     ├── Caddyfile            # qxyz.me → homepage; <app>.qxyz.me → app container
+    ├── cloudflared/         # tunnel config + credentials.json (git-ignored)
     ├── apps/<repo>.yaml     # per-app prod compose override
     └── deploy.sh            # deploy.sh <repo>: git pull + compose up --build
 
@@ -41,9 +42,12 @@ served in production.
 ## Server bootstrap
 
 One-time setup on a fresh host: install docker,
-`docker network create web`, clone the repos under `/srv`, create a
-Cloudflare tunnel (`cloudflared tunnel create` + `tunnel route dns` for
-the apex and wildcard) and place its credentials JSON at
-`deploy/cloudflared/credentials.json` (git-ignored; the tunnel id in
-`deploy/cloudflared/config.yml` must match), then
+`docker network create web`, clone the repos under `/srv` (private repos
+need a deploy key), create a Cloudflare tunnel (`cloudflared tunnel
+create` + `tunnel route dns` for the apex and wildcard) and place its
+credentials JSON at `deploy/cloudflared/credentials.json` (git-ignored;
+the tunnel id in `deploy/cloudflared/config.yml` must match, and the
+file must be readable by the container user, e.g. `chmod 644` — the
+cloudflared image runs as uid 65532), recreate each secret-bearing
+app's `.env` from its `.env.example`, then
 `docker compose -f deploy/compose.yaml up -d` and `deploy.sh` each app.
