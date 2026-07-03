@@ -3,6 +3,10 @@ http://qxyz.me {
 	file_server
 }
 
+http://www.qxyz.me {
+	redir https://qxyz.me{uri} permanent
+}
+
 http://rps.qxyz.me {
 	reverse_proxy rps-sim:80
 }
