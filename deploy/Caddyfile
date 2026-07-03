@@ -1,0 +1,36 @@
+http://qxyz.me {
+	root * /srv/public
+	file_server
+}
+
+http://rps.qxyz.me {
+	reverse_proxy rps-sim:80
+}
+
+http://spells.qxyz.me {
+	reverse_proxy spellbook:1323
+}
+
+http://pwnged.qxyz.me {
+	reverse_proxy pngme:80
+}
+
+http://chip8.qxyz.me {
+	reverse_proxy chip-8:80
+}
+
+http://place.qxyz.me {
+	reverse_proxy rplace:8080
+}
+
+http://roll.qxyz.me {
+	reverse_proxy dice-roller:8000
+}
+
+http://mnist.qxyz.me {
+	reverse_proxy mnist-webui:80
+}
+
+http://stock.qxyz.me {
+	reverse_proxy stock-search-js:3000
+}

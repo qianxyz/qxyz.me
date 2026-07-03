@@ -1,0 +1,9 @@
+services:
+  dice-roller:
+    ports: !reset []
+    restart: unless-stopped
+    networks: [web]
+
+networks:
+  web:
+    external: true

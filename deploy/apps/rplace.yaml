@@ -1,0 +1,12 @@
+services:
+  rplace:
+    ports: !reset []
+    restart: unless-stopped
+    networks: [default, web]
+
+  redis:
+    restart: unless-stopped
+
+networks:
+  web:
+    external: true
